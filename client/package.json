@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "ethereum-cryptography": "^1.1.2",
+    "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
