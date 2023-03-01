@@ -4,7 +4,7 @@ const { utf8ToBytes } = require("ethereum-cryptography/utils")
 
 // This script is used to sign a message with a private key from my local hardhat node
 /**
- * This script is used to sign a message with a private key generated from my local Hardhat ndoe.
+ * This script is used to sign a message with a private key generated from the script server/scripts/generate.js.
  * @ RECIPIENT: the address to send the amount to
  * @ AMOUNT: the amount to send
  * @ privateKey: the privateKey that will be used to sign the message
