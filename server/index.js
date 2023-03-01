@@ -23,9 +23,6 @@ app.get("/balance/:address", (req, res) => {
 })
 
 app.post("/send", (req, res) => {
-    // TODO: get a signature from the client-side application
-    // recover the public address from the signature
-
     const { sender, recipient, amount, signature, recoveryBit } = req.body
 
     setInitialBalance(sender)
@@ -53,21 +50,9 @@ app.post("/send", (req, res) => {
         })
     }
 
-    // Transform the recoveryBit into the right format
-    // let recoveryBitNumber
-    // try {
-    //     recoveryBitNumber = parseInt(recoveryBit, 10)
-    // } catch (error) {
-    //     res.status(400).send({ message: "Please provide a valid recovery Bit" })
-    // }
-
-    // // Need to recover the public address from the signature
-    // const publicKey = secp.recoverPublicKey(hashMsg, signatureToIntArray, recoveryBitNumber)
-
     if (sender != toHex(publicKey)) {
         res.status(400).send({ message: "The signature provided doesn't match" })
     }
-
     if (balances[sender] < amount) {
         res.status(400).send({ message: "Not enough funds!" })
     } else {
