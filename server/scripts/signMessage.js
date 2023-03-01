@@ -31,10 +31,10 @@ async function signMessage() {
     const [signature, recoveryBit] = signedMsg
 
     // We need to output those variables as we need them to validate that the correct privatekey signed the message
-    console.log(signedMsg)
-    console.log(`Message: ${message}`)
     console.log(`Signature: ${signature}`)
-    console.log(`Recovery bit: ${typeof recoveryBit}`)
+    console.log(`Recovery bit: ${recoveryBit}`)
+    console.log(`Value to be transfered: ${AMOUNT}`)
+    console.log(`Address to send to (recipient): ${RECIPIENT}`)
 }
 
 module.exports = { signMessage }
